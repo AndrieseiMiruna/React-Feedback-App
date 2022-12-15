@@ -5,6 +5,7 @@ import FeedbackList from './components/FeedbackList';
 import FeedbackData from './data/feedbackData';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function App() {
 	const [feedback, setFeedback] = useState(FeedbackData);
@@ -16,7 +17,8 @@ export default function App() {
 	};
 
 	const addFeedback = (newFeedback) => {
-		console.log(newFeedback);
+		newFeedback.id = uuidv4();
+		setFeedback([newFeedback, ...feedback]);
 	};
 	return (
 		<>

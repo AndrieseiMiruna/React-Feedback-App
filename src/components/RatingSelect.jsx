@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 
-function RatingSelect() {
+function RatingSelect({ select }) {
 	const [selected, setSelected] = useState(10);
 
 	const handleChange = (e) => {
 		setSelected(+e.currentTarget.value); //setezi sa fie numar adaugand plus
-		console.log(+e.currentTarget.value);
+		select(+e.currentTarget.value);
 	};
 	return (
 		<ul className="rating">
