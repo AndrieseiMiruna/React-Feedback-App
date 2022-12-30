@@ -5,7 +5,7 @@ import RatingSelect from './RatingSelect';
 
 function FeedbackForm({ handleAddFeedback }) {
 	const [text, setText] = useState('');
-	const [rating, setRating] = useState('');
+	const [rating, setRating] = useState(10);
 
 	const [buttonDisabled, setButtonDisabled] = useState(true);
 	const [message, setMessage] = useState('');
@@ -27,7 +27,6 @@ function FeedbackForm({ handleAddFeedback }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
 		if (text.trim().length > 10) {
 			const newFeedback = {
 				text: text,
